@@ -5,9 +5,28 @@ Dockerfile for Urbit. Built image is [paulbellamy/urbit](https://hub.docker.com/
 ## Usage
 
 ```
-$ docker run -ti -v `pwd`:/urbit paulbellamy/urbit -h
+$ docker run -ti paulbellamy/urbit -c mycomet
 ```
 
-Workdir is `/urbit`, and all data is stored there, so you'll want to
-mount that from the local filesystem. If you're booting an existing
-ship, you'll want to mount it's data into `/urbit/<ship-name>`.
+### Keeping Your Data
+
+Workdir is `/urbit`, and all data is stored there, so if you want to
+keep your data, you'll want to mount your urbit from the local
+filesystem. For example, to create a comet, and store the data
+locally:
+
+```
+$ curl -o urbit.pill https://bootstrap.urbit.org/latest.pill
+$ docker run -ti -v `pwd`:/urbit paulbellamy/urbit -c mycomet
+```
+
+If you're booting an existing urbit, you'll want to mount it's data
+into `/urbit/<name>`. For example, to launch an existing urbit, named
+`fintud-macrep`:
+
+```
+$ docker run -ti -v `pwd`/fintud-macrep:/urbit/fintud-macrep paulbellamy/urbit fintud-macrep
+```
+
+For more info on usage, please see [the urbit setup
+docs](http://urbit.org/docs/using/setup/).
