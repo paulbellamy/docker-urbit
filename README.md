@@ -16,7 +16,6 @@ filesystem. For example, to create a comet, and store the data
 locally:
 
 ```
-$ curl -o urbit.pill https://bootstrap.urbit.org/latest.pill
 $ docker run -ti -v `pwd`:/urbit paulbellamy/urbit -c mycomet
 ```
 
