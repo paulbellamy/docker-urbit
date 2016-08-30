@@ -24,6 +24,7 @@ RUN make -C /usr/local/urbit
 RUN ln -s -T /usr/local/urbit/bin/urbit /usr/local/bin/urbit
 
 RUN mkdir /urbit
+RUN git clone --recursive --depth 1 https://github.com/urbit/arvo /urbit/arvo
 WORKDIR /urbit
 
 ENTRYPOINT ["urbit"]

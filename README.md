@@ -27,5 +27,15 @@ into `/urbit/<name>`. For example, to launch an existing urbit, named
 $ docker run -ti -v `pwd`/fintud-macrep:/urbit/fintud-macrep paulbellamy/urbit fintud-macrep
 ```
 
+### Starting with a fake `~zod`
+
+This can be useful for development
+
+```
+$ docker run -ti paulbellamy/urbit -F -I zod -A /urbit/arvo -c mycomet
+```
+
+### More Info
+
 For more info on usage, please see [the urbit setup
 docs](http://urbit.org/docs/using/setup/).
