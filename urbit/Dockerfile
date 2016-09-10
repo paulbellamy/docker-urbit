@@ -1,4 +1,5 @@
 FROM debian:stretch
+MAINTAINER Paul Bellamy <paul.a.bellamy@gmail.com>
 
 RUN apt-get update
 RUN apt-get install -y \

@@ -35,6 +35,13 @@ This can be useful for development
 $ docker run -ti paulbellamy/urbit -F -I zod -A /urbit/arvo -c mycomet
 ```
 
+There is another image, with a different entrpoint to make this even
+easier:
+
+```
+$ docker run -ti paulbellamy/fakeurbit -c mycomet
+```
+
 ### More Info
 
 For more info on usage, please see [the urbit setup
