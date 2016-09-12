@@ -1,5 +1,8 @@
 # docker-urbit
 
+[![](https://images.microbadger.com/badges/image/paulbellamy/urbit.svg)](https://microbadger.com/images/paulbellamy/urbit
+"Get your own image badge on microbadger.com")
+
 Dockerfile for Urbit. Built image is [paulbellamy/urbit](https://hub.docker.com/r/paulbellamy/urbit/)
 
 ## Usage
