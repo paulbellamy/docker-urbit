@@ -24,6 +24,8 @@ RUN git clone --recursive --depth 1 https://github.com/urbit/urbit.git /usr/loca
 RUN make -C /usr/local/urbit
 RUN ln -s -T /usr/local/urbit/bin/urbit /usr/local/bin/urbit
 
+ADD create_or_run /usr/local/bin/create_or_run
+
 RUN mkdir /urbit
 RUN git clone --recursive --depth 1 https://github.com/urbit/arvo /urbit/arvo
 WORKDIR /urbit
