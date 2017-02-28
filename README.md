@@ -1,9 +1,8 @@
 # docker-urbit
 
-[![](https://images.microbadger.com/badges/image/paulbellamy/urbit.svg)](https://microbadger.com/images/paulbellamy/urbit
-"Get your own image badge on microbadger.com")
+![](https://images.microbadger.com/badges/image/paulbellamy/urbit.svg)
 
-Dockerfile for Urbit. Built image is [paulbellamy/urbit](https://hub.docker.com/r/paulbellamy/urbit/)
+Dockerfile for Urbit. Built image is [paulbellamy/urbit][dockerhub].
 
 ## Usage
 
@@ -35,17 +34,21 @@ $ docker run -ti -v `pwd`/fintud-macrep:/urbit/fintud-macrep paulbellamy/urbit f
 This can be useful for development
 
 ```
-$ docker run -ti paulbellamy/urbit -F -I zod -A /urbit/arvo -c mycomet
+$ docker run -ti paulbellamy/urbit -F -I zod -A /arvo -c mycomet
 ```
 
-There is another image, with a different entrpoint to make this even
-easier:
+There is another image, with a different entrypoint and the arvo repo checked
+out to make this even easier:
 
-```
-$ docker run -ti paulbellamy/fakeurbit -c mycomet
-```
+    $ docker run -ti paulbellamy/fakeurbit -A /arvo -c piername
+
+to start it up after stopping it, omit `-A` and `-c`:
+
+    $ docker run -ti paulbellamy/fakeurbit piername
 
 ### More Info
 
-For more info on usage, please see [the urbit setup
-docs](http://urbit.org/docs/using/setup/).
+For more info on usage, please see [the urbit setup docs][urbit-setup].
+
+[dockerhub]:    https://hub.docker.com/r/paulbellamy/urbit/
+[urbit-setup]:  http://urbit.org/docs/using/setup/
