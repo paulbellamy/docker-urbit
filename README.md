@@ -40,11 +40,11 @@ $ docker run -ti paulbellamy/urbit -F -I zod -A /arvo -c mycomet
 There is another image, with a different entrypoint and the arvo repo checked
 out to make this even easier:
 
-    $ docker run -ti paulbellamy/fakeurbit -A /arvo -c piername
+    $ docker run -ti paulbellamy/urbit:fakezod -A /arvo -c piername
 
 to start it up after stopping it, omit `-A` and `-c`:
 
-    $ docker run -ti paulbellamy/fakeurbit piername
+    $ docker run -ti paulbellamy/urbit:fakezod piername
 
 ### More Info
 
