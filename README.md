@@ -75,6 +75,26 @@ to run a container from an existing fakezod pier, omit `-A` and `-c`:
 
     $ docker run -ti -v `pwd`/myzod:/urbit/myzod paulbellamy/urbit:fakezod myzod
 
+## Troubleshooting
+If your container keeps printing something like
+
+    unix: stopping process 1, live in fzod...
+
+and restarting, you are stuck in a restart loop. Your urbit thinks another
+process is running, and by trying to kill it terminates itself.
+
+The fix is rather simple. First, make sure your container is stopped:
+
+    $ docker kill fakezod
+
+then simply delete the vere lockfile:
+
+    $ rm /path/to/pier/.vere.lock
+
+if you dont have the volume mounted, `docker exec` in the running container:
+
+    $ docker exec fakezod rm /urbit/fzod/.vere.lock
+
 ## More Info
 For more info on usage, please see [the urbit setup docs][urbit-setup].
 
