@@ -1,18 +1,13 @@
 FROM debian
 MAINTAINER Paul Bellamy <paul.a.bellamy@gmail.com>
 
-RUN apt-get update
-RUN apt-get install -y \
-      ca-certificates \
-      git \
-      wget
-RUN wget https://media.urbit.org/dist/debian/urbit_0.4.3-1_amd64.deb
-RUN dpkg -i urbit_0.4.3-1_amd64.deb ; apt-get install -y -f
+RUN apt-get update \
+ && apt-get install -y ca-certificates git wget
 
-ADD create_or_run /usr/local/bin/create_or_run
+RUN wget https://media.urbit.org/dist/debian/urbit_0.4.3-1_amd64.deb \
+ && dpkg --force-depends -i urbit_0.4.3-1_amd64.deb \
+ && apt-get install -fy
 
-RUN mkdir /urbit
-RUN git clone --recursive --depth 1 https://github.com/urbit/arvo /urbit/arvo
 WORKDIR /urbit
-
+EXPOSE 8443
 ENTRYPOINT ["urbit"]
