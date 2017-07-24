@@ -15,13 +15,13 @@ lack of an attached TTY.
 The image exposes the urbit's http server at port 8443. Publishing that port
 Will allow you to see your urbit's hosted content at `localhost:8080`:
 
-    $ docker run -ti -p 8080:8443 pauleballmy/urbit -c mycomet
+    $ docker run -ti -p 8080:8443 paulbellamy/urbit -c mycomet
 
 Port 8443 requires authenticateion, which makes sense since the docker image
 may be running on a server. To publish the local pre-authenticated port (8080),
 and only make it accessible locally, you can start your container like this:
 
-    $ docker run -ti -p 127.0.0.1:8080:8080 pauleballmy/urbit -c mycomet
+    $ docker run -ti -p 127.0.0.1:8080:8080 paulbellamy/urbit -c mycomet
 
 ### Binding data to the host FS
 The container's working directory is `/urbit`, and all data is stored there,
